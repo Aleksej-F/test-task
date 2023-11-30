@@ -10,10 +10,17 @@
 </head>
 <body>
   <div id="app">
-    <countries-table>
+    <countries-table
+      :countries="countries"
+    >
       text
     </countries-table>
+    <pagination
+      :pagination="pagination"
+      @getpage="getCountrieList"
+    ></pagination>
   </div>
   <script src="vue.js" defer></script>
+  
 </body>
 </html>

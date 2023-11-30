@@ -1,4 +1,42 @@
 .сtable{
   background-color: aqua;
-  height: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+.сtable-head{
+  display: flex;
+
+}
+.сtable-head_item{
+  flex: 1;
+  text-align: center;
+}
+
+.block-contener{
+    margin-top: 20px;
+    padding-bottom: 30px;
+  }
+.block-pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-pagination-element{
+  padding: 5px 10px;
+  margin: 0 5px;
+  min-width: 10px;
+  border-radius: 5px;
+  color: #269EB7;
+}
+
+.block-pagination-element.active {
+  background-color: #269EB7;
+  color: #FFFFFF
+}
+.block-pagination-element:hover{
+  cursor: pointer;
+  
+  background-color: #5ab5c86e
+}
+    

@@ -7,8 +7,8 @@ Content-Type: application/json'   -d '{
      "iso_3166_1_a2":"RU"
   },
   "paginate": {
-    "page": 1,
-    "pp_items": 10
+    "page": 1,  //номер страницы
+    "pp_items": 10 // элементов на странице
   }
 }'
 Фильтрация возможна по полю iso_3166_1_a2
@@ -36,9 +36,9 @@ Content-Type: application/json'   -d '{
       "next_page_number": null, // номер следующей страницы
       "previous_page_number": null, // номер предыдущей страницы
       "start_index": 1,  // начальный элемент
-      "end_index": 1, // 
-      "total_count": 249, // общее количество
-      "selected_count": 1, // выбранный(активный элемент - страница)
+      "end_index": 1, // последний элемент
+      "total_count": 249, // общее количество записей
+      "selected_count": 1, // количество выбранных записей
       "pages": 1 // номер страницы
     }
   },
