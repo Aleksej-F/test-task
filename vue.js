@@ -14,7 +14,7 @@ new Vue({
         "pp_items": 5
       }
     })
-    this.addPaginations()
+    
   },
   data: {
     countries:[{
@@ -36,9 +36,29 @@ new Vue({
       "end_index": 1, // последний элемент
       "total_count": 249, // общее количество записей
       "selected_count": 1, // количество выбранных записей
-      "pages": 1 // номер страницы
+      "pages": 1 ,// номер страницы
+      "paginations": []
     },
     isError: false,
+  },
+  computed: {
+    paginanions: () =>{
+      let pagin = []
+        for (let i = 0; i < 5; i++){
+          let nn = this.pagination.has_previous ? this.pagination.previous_page_number - 1 > 0 
+              ? this.pagination.previous_page_number - 1 : this.pagination.previous_page_number
+            : this.pagination.next_page_number - 1
+          pagin.push({
+            label: i + nn,
+            active: i + nn === this.pagination.next_page_number - 1
+          })
+          if (i + nn === this.pagination.next_page_number - 1) {
+            this.pagination.activePage = i + nn
+          }
+        }
+        
+      return pagin
+    }
   },
   methods:{
     async getCountrieList(item){
@@ -66,6 +86,7 @@ new Vue({
     },
     addPaginations(){
       let pagin = []
+      if (has_previous){
         for (let i = 0; i < 5; i++){
           let nn = this.pagination.has_previous ? this.pagination.previous_page_number - 1 > 0 
               ? this.pagination.previous_page_number - 1 : this.pagination.previous_page_number
@@ -74,8 +95,12 @@ new Vue({
             label: i + nn,
             active: i + nn === this.pagination.next_page_number - 1
           })
+          if (i + nn === this.pagination.next_page_number - 1) {
+            this.pagination.activePage = i + nn
+          }
         }
-        this.pagination.paginations = pagin
+      }
+      this.pagination.paginations = pagin
     }
   }
 });

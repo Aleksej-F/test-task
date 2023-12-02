@@ -10,13 +10,21 @@
 </head>
 <body>
   <div id="app">
+    <filter-list
+      :filterlist="countries"
+      :page="pagination.activePage"
+      
+      @getpage="getCountrieList"
+    > </filter-list>
     <countries-table
       :countries="countries"
+     
     >
-      text
+     
     </countries-table>
     <pagination
       :pagination="pagination"
+      
       @getpage="getCountrieList"
     ></pagination>
   </div>

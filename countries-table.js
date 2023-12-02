@@ -3,9 +3,7 @@ Vue.component('countries-table', {
   template: `
       <div class="сtable">
           <h1>Страны</h1>
-          <filterlist
-            :filterList="countries"
-          />
+          
           <div class="сtable-head">
             <div class="сtable-head_item">
               <b>обозначение</b>
