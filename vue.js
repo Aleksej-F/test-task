@@ -16,7 +16,7 @@ new Vue({
     })
     
   },
-  data: {
+  data() { return{
     countries:[{
       "iso_3166_1_a2": "RU",  //сокращенное обозначени
       "iso_3166_1_a3": "RUS", // обозначение
@@ -39,7 +39,7 @@ new Vue({
       "pages": 1 ,// номер страницы
       "paginations": []
     },
-    isError: false,
+    isError: false,}
   },
   computed: {
     paginanions: () =>{
